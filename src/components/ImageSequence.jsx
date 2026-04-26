@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 
 const ImageSequence = ({ 
@@ -59,22 +59,22 @@ const ImageSequence = ({
     const ctx = canvas.getContext('2d');
     const img = images[index];
 
-    // Calculate aspect ratio to fit image in canvas
+    // Calculate aspect ratio to make image cover the full screen canvas
     const canvasAspect = canvas.width / canvas.height;
     const imgAspect = img.width / img.height;
-    
+
     let drawWidth, drawHeight, offsetX, offsetY;
 
     if (canvasAspect > imgAspect) {
-      drawHeight = canvas.height;
-      drawWidth = canvas.height * imgAspect;
-      offsetX = (canvas.width - drawWidth) / 2;
-      offsetY = 0;
-    } else {
       drawWidth = canvas.width;
       drawHeight = canvas.width / imgAspect;
       offsetX = 0;
       offsetY = (canvas.height - drawHeight) / 2;
+    } else {
+      drawHeight = canvas.height;
+      drawWidth = canvas.height * imgAspect;
+      offsetX = (canvas.width - drawWidth) / 2;
+      offsetY = 0;
     }
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -119,8 +119,8 @@ const ImageSequence = ({
       )}
       <canvas 
         ref={canvasRef}
-        className="w-full h-full object-contain pointer-events-none"
-        style={{ maxWidth: '100%', maxHeight: '100%' }}
+        className="h-full w-full pointer-events-none"
+        style={{ width: '100%', height: '100%' }}
       />
     </div>
   );
