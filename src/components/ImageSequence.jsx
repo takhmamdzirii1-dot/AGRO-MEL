@@ -1,21 +1,17 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 
 const ImageSequence = ({ 
   frameCount = 240, 
   baseUrl = '/assets/sequence/ezgif-frame-', 
   extension = '.jpg',
-  containerRef 
 }) => {
   const canvasRef = useRef(null);
   const [images, setImages] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Hook into the scroll progress of the parent container
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
+  // Use entire document scroll for the animation
+  const { scrollYProgress } = useScroll();
 
   // Map scroll progress (0 to 1) to frame index (1 to frameCount)
   const frameIndex = useTransform(scrollYProgress, [0, 1], [1, frameCount]);
@@ -38,7 +34,7 @@ const ImageSequence = ({
         };
         img.onerror = () => {
           console.error(`Failed to load frame ${i}`);
-          loadedCount++; // Still count it to avoid hanging the loader
+          loadedCount++;
           if (loadedCount === frameCount) {
             setIsLoaded(true);
           }
@@ -51,7 +47,7 @@ const ImageSequence = ({
     preloadImages();
   }, [frameCount, baseUrl, extension]);
 
-  // Draw function
+  // Draw function — cover entire canvas
   const renderCanvas = (index) => {
     const canvas = canvasRef.current;
     if (!canvas || !images[index]) return;
@@ -59,22 +55,24 @@ const ImageSequence = ({
     const ctx = canvas.getContext('2d');
     const img = images[index];
 
-    // Calculate aspect ratio to fit image in canvas
+    // Use "cover" logic to fill the entire viewport
     const canvasAspect = canvas.width / canvas.height;
     const imgAspect = img.width / img.height;
     
     let drawWidth, drawHeight, offsetX, offsetY;
 
     if (canvasAspect > imgAspect) {
-      drawHeight = canvas.height;
-      drawWidth = canvas.height * imgAspect;
-      offsetX = (canvas.width - drawWidth) / 2;
-      offsetY = 0;
-    } else {
+      // Canvas is wider — fill width, crop height
       drawWidth = canvas.width;
       drawHeight = canvas.width / imgAspect;
       offsetX = 0;
       offsetY = (canvas.height - drawHeight) / 2;
+    } else {
+      // Canvas is taller — fill height, crop width
+      drawHeight = canvas.height;
+      drawWidth = canvas.height * imgAspect;
+      offsetX = (canvas.width - drawWidth) / 2;
+      offsetY = 0;
     }
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -83,7 +81,7 @@ const ImageSequence = ({
 
   // Update canvas when frameIndex changes
   useMotionValueEvent(frameIndex, "change", (latest) => {
-    const index = Math.floor(latest);
+    const index = Math.min(Math.max(Math.floor(latest), 1), frameCount);
     renderCanvas(index);
   });
 
@@ -94,12 +92,11 @@ const ImageSequence = ({
         const canvas = canvasRef.current;
         if (!canvas) return;
         
-        // Get parent dimensions
-        const rect = canvas.parentElement.getBoundingClientRect();
-        canvas.width = rect.width * window.devicePixelRatio;
-        canvas.height = rect.height * window.devicePixelRatio;
+        // Fill the entire viewport
+        canvas.width = window.innerWidth * window.devicePixelRatio;
+        canvas.height = window.innerHeight * window.devicePixelRatio;
         
-        // Initial render
+        // Render current frame
         renderCanvas(Math.floor(frameIndex.get()));
       };
 
@@ -111,16 +108,19 @@ const ImageSequence = ({
   }, [isLoaded]);
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+    <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
       {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center bg-brand-black/20 backdrop-blur-sm z-10">
-          <div className="w-12 h-12 border-4 border-brand-honey border-t-transparent rounded-full animate-spin" />
+        <div className="absolute inset-0 flex items-center justify-center bg-brand-black z-10">
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-14 h-14 border-3 border-brand-honey/40 border-t-brand-honey rounded-full animate-spin" />
+            <p className="text-gray-500 text-xs uppercase tracking-[0.3em]">Loading</p>
+          </div>
         </div>
       )}
       <canvas 
         ref={canvasRef}
-        className="w-full h-full object-contain pointer-events-none"
-        style={{ maxWidth: '100%', maxHeight: '100%' }}
+        className="w-full h-full pointer-events-none"
+        style={{ display: 'block' }}
       />
     </div>
   );
