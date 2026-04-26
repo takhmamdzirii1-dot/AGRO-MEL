@@ -4,7 +4,6 @@
 
 [build.environment]
   NETLIFY_NEXTJS_SKIP_PREPARE = "true"
-  NETLIFY_SKIP_NEXTJS_PLUGIN = "true"
   NODE_VERSION = "20"
 
 [[redirects]]
