@@ -2,14 +2,14 @@ const en = {
   // Direction
   dir: 'ltr',
   lang: 'en',
-  fontFamily: "'Inter', system-ui, sans-serif",
+  fontFamily: "'IBM Plex Sans Arabic', system-ui, sans-serif",
 
   // Navbar
   nav: {
     home: 'Home',
-    about: 'About',
-    products: 'Products',
-    showroom: 'Showroom',
+    about: 'Our Vision',
+    products: 'Categories',
+    showroom: 'Coming Soon',
     quality: 'Quality',
     contact: 'Contact',
     contactBtn: 'Contact Us',
@@ -17,124 +17,132 @@ const en = {
 
   // Hero
   hero: {
-    titleLine1: 'Excellence, quality',
-    titleLine2: 'and industrial expertise.',
-    subtitle: 'Agro Mel is a leading agro-food factory, specialized in manufacturing high-quality products. We combine industrial expertise and natural ingredients to deliver the best to our partners.',
-    cta1: 'Explore our products',
-    cta2: 'Contact us',
-    scrollHint: 'Scroll to animate',
+    badge: 'Trusted Food Manufacturing',
+    titleLine1: 'Crafting Better',
+    titleHighlight: 'Morning Moments',
+    subtitle: 'A food manufacturing company developing high-quality breakfast and everyday food products with a warm taste made for every home.',
+    cta1: 'Discover Our Vision',
+    cta2: 'Contact Us',
+    scrollHint: 'Scroll to explore',
   },
 
-  // About
+  // Jam Explosion Section
+  explosion: {
+    title: 'Taste the',
+    titleHighlight: 'Explosion',
+    subtitle: 'From the heart of nature to a burst of pure flavor. Witness the crafting of our signature preserves.',
+  },
+
+  // About / Vision
   about: {
-    label: 'About Us',
+    label: 'Our Vision',
     titleLine1: 'Modern manufacturing,',
-    titleLine2: 'Natural origins.',
-    p1: "AGRO MEL is a state-of-the-art agro-food factory dedicated to transforming nature's finest ingredients into premium food products for modern retail and distribution.",
-    p2: "Our facility bridges the gap between traditional agricultural purity and contemporary manufacturing standards. With a relentless focus on quality control, reliable packaging, and natural ingredients, we ensure every product that leaves our factory meets the highest global standards.",
-    p3: "From farm to shelf, our process is designed to preserve freshness, taste, and nutritional value, making AGRO MEL a trusted partner for wholesalers, restaurants, and retailers worldwide.",
+    titleLine2: 'Warm family taste.',
+    p1: "AGRO MEL is a dedicated food manufacturing facility focused on creating premium breakfast and everyday food products that bring families together around the table.",
+    p2: "We bridge the gap between industrial excellence and the warmth of a home-cooked meal. Our factory uses state-of-the-art technology to process natural ingredients into high-quality packaged goods, from morning essentials to daily nutrition.",
+    p3: "Every product we develop is a promise of quality, cleanliness, and authentic taste, designed to meet the needs of modern homes while preserving traditional values.",
     stat1Label: 'Natural',
     stat2Label: 'Products',
     stat3Label: 'Quality Control',
-    est: 'Est. 2024',
+    est: 'Coming Soon',
   },
 
   // Features
   features: {
-    label: 'Why choose us',
-    title: 'Why choose',
-    titleHighlight: 'Agro Mel?',
+    label: 'Why Agro Mel',
+    title: 'Excellence in',
+    titleHighlight: 'Every Product',
     items: [
-      { title: 'Superior Quality', desc: 'Products manufactured to the strictest standards, ensuring impeccable quality in every batch.' },
-      { title: 'Reliable Production', desc: 'Industrial production capacity that ensures consistency and availability of our products.' },
-      { title: 'Industrial Expertise', desc: 'Years of expertise in agro-food processing, dedicated to excellence.' },
-      { title: 'Hygiene & Control', desc: 'Rigorous hygiene protocols and continuous quality control at every stage of the process.' },
-      { title: 'Professional Packaging', desc: 'Careful and durable packaging, designed to preserve freshness and facilitate distribution.' },
-      { title: 'On-Time Delivery', desc: 'Optimized logistics to guarantee on-time deliveries with every order.' },
+      { title: 'Trusted Quality', desc: 'Manufacturing to the strictest international standards for safety and taste.' },
+      { title: 'Morning-Friendly', desc: 'Specially developed flavors and textures for the perfect breakfast experience.' },
+      { title: 'Selected Ingredients', desc: 'Only the finest natural ingredients enter our facility for processing.' },
+      { title: 'Clean Manufacturing', desc: 'Rigorous hygiene protocols and advanced climate-controlled production lines.' },
+      { title: 'Modern Packaging', desc: 'Sleek, durable packaging designed to preserve freshness from factory to home.' },
+      { title: 'For Every Home', desc: 'Products designed to be accessible, healthy, and loved by families everywhere.' },
     ],
-  },
-
-  // Products / Showroom
-  showroom: {
-    label: 'Showroom',
-    title: 'Our signature',
-    titleHighlight: 'products',
-    filterAll: 'All',
-    cta: 'Request a quote',
-    products: [
-      { name: 'Strawberry Jam', category: 'Preserves', desc: '100% natural, hand-picked strawberries preserved at peak freshness.' },
-      { name: 'Natural Honey', category: 'Honey', desc: 'Pure, raw honey sourced from local sustainable apiaries.' },
-      { name: 'Fruit Juice', category: 'Beverages', desc: 'Cold-pressed natural fruit juices with zero added sugars.' },
-      { name: 'Tomato Sauce', category: 'Sauces', desc: 'Rich, authentic sauce made with sun-ripened tomatoes.' },
-      { name: 'Canned Vegetables', category: 'Preserves', desc: 'Premium quality vegetables preserved for long-lasting freshness.' },
-      { name: 'Natural Syrups', category: 'Beverages', desc: 'Artisanal flavor syrups crafted from pure botanical extracts.' },
-    ],
-    categories: ['All', 'Preserves', 'Honey', 'Beverages', 'Sauces'],
   },
 
   // Production Process
   process: {
-    label: 'Our process',
-    title: 'Production',
-    titleHighlight: 'process',
+    label: 'Our Process',
+    title: 'From Nature',
+    titleHighlight: 'To Your Table',
     steps: [
-      { title: 'Raw material selection', desc: 'We rigorously select the finest ingredients from trusted producers.' },
-      { title: 'Processing', desc: 'Our modern production lines transform raw materials into quality finished products.' },
-      { title: 'Quality control', desc: 'Every batch undergoes rigorous testing to ensure compliance with international standards.' },
-      { title: 'Packaging', desc: 'Professional packaging that preserves the freshness and quality of the product.' },
-      { title: 'Distribution', desc: 'Efficient logistics to deliver our products to national and international markets.' },
+      { title: 'Sourcing', desc: 'Selecting premium natural ingredients from trusted producers.' },
+      { title: 'Processing', desc: 'Using advanced technology to maintain nutritional integrity.' },
+      { title: 'Testing', desc: 'Rigorous quality checks at every stage of production.' },
+      { title: 'Packaging', desc: 'Freshness-sealed containers designed for your home.' },
+      { title: 'Delivery', desc: 'Efficient logistics to bring AGRO MEL to your kitchen.' },
     ],
+  },
+
+  // Product Categories
+  showroom: {
+    label: 'Categories',
+    title: 'Products',
+    titleHighlight: 'Coming Soon',
+    filterAll: 'All',
+    cta: 'Learn More',
+    products: [
+      { name: 'Breakfast Cereals', category: 'Breakfast', desc: 'Crunchy, nutritious grains to start your day with energy.' },
+      { name: 'Natural Honey & Jams', category: 'Sweet', desc: 'Pure sweetness sourced from the finest orchards.' },
+      { name: 'Baked Goods', category: 'Bakery', desc: 'Soft, fresh-tasting biscuits and pastries for every home.' },
+      { name: 'Premium Coffee', category: 'Everyday', desc: 'Rich, aromatic blends for your daily morning ritual.' },
+      { name: 'Dairy Additions', category: 'Everyday', desc: 'High-quality supplements for a complete family meal.' },
+      { name: 'Healthy Snacks', category: 'Breakfast', desc: 'Light and natural snacks for active families.' },
+    ],
+    categories: ['All', 'Breakfast', 'Sweet', 'Bakery', 'Everyday'],
   },
 
   // Quality
   quality: {
-    label: 'Excellence assured',
-    title: 'Our quality',
-    titleHighlight: 'standards',
-    description: "At AGRO MEL, we believe that premium quality is not an accident, but the result of rigorous processes, advanced technology, and a deep respect for nature's ingredients.",
+    label: 'Excellence Assured',
+    title: 'Our Quality',
+    titleHighlight: 'Standards',
+    description: "At AGRO MEL, we believe that high-quality food is a right for every home. Our manufacturing process combines precision technology with a deep respect for natural taste.",
     items: [
-      { title: 'Selected Ingredients', desc: 'Sourced from trusted farmers, ensuring only the finest natural produce enters our facility.' },
-      { title: 'Controlled Production', desc: 'State-of-the-art manufacturing lines with strict temperature and hygiene controls.' },
-      { title: 'Freshness Sealing', desc: 'Advanced vacuum sealing technology preserves natural flavor and extends shelf life.' },
-      { title: 'Retail-Ready Packaging', desc: 'Premium, durable packaging designed for modern retail shelves and logistics.' },
-      { title: 'Consistent Quality', desc: 'Rigorous lab testing guarantees every batch meets international safety standards.' },
+      { title: 'Certified Hygiene', desc: 'Advanced sanitization systems ensure a sterile and safe environment.' },
+      { title: 'Ingredient Purity', desc: 'Strict testing for all raw materials to ensure no harmful additives.' },
+      { title: 'Precision Processing', desc: 'Automated lines maintain consistent quality and nutritional value.' },
+      { title: 'Freshness Sealing', desc: 'Innovative vacuum and nitrogen sealing to extend natural shelf life.' },
+      { title: 'Final Testing', desc: 'Every batch is sampled and verified before it leaves our factory gates.' },
     ],
   },
 
   // Contact
   contact: {
-    label: 'Distributors & Partners',
-    title: 'Partner with',
-    titleHighlight: 'AGRO MEL',
-    description: 'Premium agro-food products ready for modern markets. Join our global network of retailers, wholesalers, and restaurants.',
-    cta1: 'Request a quote',
-    cta2: 'Contact us',
+    label: 'Join Our Journey',
+    title: 'Prepare for the',
+    titleHighlight: 'Launch',
+    description: 'We are currently preparing our first line of breakfast products. Contact us to learn about partnership opportunities or distribution.',
+    cta1: 'Send Message',
+    cta2: 'Call Us',
     form: {
-      name: 'Your name',
-      email: 'Your email',
-      company: 'Company',
-      message: 'Your message',
-      send: 'Send message',
+      name: 'Full Name',
+      email: 'Email Address',
+      company: 'Company (Optional)',
+      message: 'How can we help you?',
+      send: 'Send Inquiry',
     },
     info: {
       phone: '+213 (0) 555 123 456',
-      email: 'contact@agromel.com',
+      email: 'hello@agromel.com',
       address: 'Industrial Zone, Algiers, Algeria',
     },
   },
 
   // Footer
   footer: {
-    description: 'Premium agro-food products crafted with quality, freshness, and trust. Delivering the best of nature to modern markets.',
-    productsTitle: 'Products',
+    description: 'A warm, clean, and trustworthy food manufacturing brand crafting the future of breakfast and everyday family nutrition.',
+    productsTitle: 'Coming Soon',
     companyTitle: 'Company',
-    contactTitle: 'Contact',
-    aboutFactory: 'The Factory',
+    contactTitle: 'Support',
+    aboutFactory: 'The Vision',
     qualityStandards: 'Quality Standards',
-    distributors: 'Distributors',
+    distributors: 'Partnership',
     contactUs: 'Contact Us',
-    copyright: '© {year} AGRO MEL Factory. All rights reserved.',
-    productList: ['Strawberry Jam', 'Natural Honey', 'Fruit Juice', 'Tomato Sauce'],
+    copyright: '© {year} AGRO MEL. Made with heart for every home.',
+    productList: ['Breakfast Cereals', 'Natural Jams', 'Baked Goods', 'Premium Coffee'],
   },
 };
 

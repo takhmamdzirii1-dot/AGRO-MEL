@@ -12,33 +12,31 @@ const icons = [
 ];
 
 const iconColors = [
-  'text-brand-honey',
-  'text-brand-soft-green',
-  'text-brand-gold',
-  'text-green-400',
-  'text-brand-beige',
-  'text-brand-light-gold',
+  'text-brand-primary',
+  'text-brand-accent',
+  'text-brand-primary',
+  'text-brand-accent',
+  'text-brand-primary',
+  'text-brand-accent',
 ];
 
 const FeaturesSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="features" className="py-28 section-bg-alt relative overflow-hidden">
-      <div className="section-divider absolute top-0 left-0 w-full" />
-      
+    <section id="features" className="py-24 md:py-32 bg-brand-bg/80 relative overflow-hidden">
       {/* Background decorations */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-brand-green/8 rounded-full blur-[120px] pointer-events-none -translate-x-1/2" />
-      <div className="absolute bottom-0 right-0 w-60 h-60 bg-brand-honey/5 rounded-full blur-[100px] pointer-events-none translate-x-1/3" />
+      <div className="absolute top-1/2 left-0 w-80 h-80 bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2" />
+      <div className="absolute bottom-0 right-0 w-60 h-60 bg-brand-accent/5 rounded-full blur-[100px] pointer-events-none translate-x-1/3" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-brand-honey uppercase tracking-[0.3em] text-sm font-semibold mb-4"
+            className="text-brand-primary uppercase tracking-[0.2em] text-xs font-bold mb-4"
           >
             {t.features.label}
           </motion.p>
@@ -47,30 +45,30 @@ const FeaturesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-serif font-bold text-white"
+            className="text-4xl md:text-5xl font-sans font-bold text-brand-text"
           >
-            {t.features.title} <span className="text-gradient-gold italic font-light">{t.features.titleHighlight}</span>
+            {t.features.title} <span className="text-brand-accent">{t.features.titleHighlight}</span>
           </motion.h2>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {t.features.items.map((item, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-500 group cursor-default"
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="soft-card soft-card-hover group cursor-default"
             >
-              <div className={`mb-6 w-14 h-14 rounded-xl bg-white/5 border border-white/8 flex items-center justify-center ${iconColors[idx]} group-hover:bg-white/8 transition-all duration-300`}>
+              <div className={`mb-8 w-16 h-16 rounded-2xl bg-brand-bg flex items-center justify-center ${iconColors[idx]} border border-brand-border transition-all duration-300 group-hover:scale-110`}>
                 {icons[idx]}
               </div>
-              <h3 className="text-lg font-serif font-bold text-white mb-3 group-hover:text-brand-cream transition-colors">
+              <h3 className="text-xl font-sans font-bold text-brand-text mb-4">
                 {item.title}
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-brand-muted text-base leading-relaxed">
                 {item.desc}
               </p>
             </motion.div>

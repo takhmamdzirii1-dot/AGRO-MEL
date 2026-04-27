@@ -7,9 +7,9 @@ const HeroSection = () => {
   return (
     <section 
       id="home"
-      className="relative min-h-screen flex items-center"
+      className="relative min-h-screen flex items-center bg-brand-bg/80 pt-20"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20">
         <div className="max-w-3xl">
           
           <motion.div 
@@ -17,30 +17,30 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* Brand tag */}
+            {/* Brand tag / Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mb-8"
             >
-              <span className="inline-flex items-center px-5 py-2 rounded-full glass-card text-brand-honey text-xs font-semibold uppercase tracking-[0.2em]">
-                ✦ &nbsp; Agro Mel — Factory
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-brand-accent/10 border border-brand-accent/20 text-brand-accent text-xs font-bold uppercase tracking-[0.1em]">
+                ✦ &nbsp; {t.hero.badge}
               </span>
             </motion.div>
 
             <motion.h1 
-              className="text-5xl sm:text-6xl md:text-8xl font-serif font-bold text-white leading-[1.05] mb-8"
+              className="text-5xl sm:text-6xl md:text-7xl font-sans font-bold text-brand-text leading-[1.1] mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.4 }}
             >
               {t.hero.titleLine1}<br />
-              <span className="text-gradient-gold">{t.hero.titleLine2}</span>
+              <span className="text-brand-accent">{t.hero.titleHighlight}</span>
             </motion.h1>
             
             <motion.p 
-              className="text-lg md:text-xl text-gray-300/80 max-w-xl leading-relaxed mb-10"
+              className="text-lg md:text-xl text-brand-muted max-w-xl leading-relaxed mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -49,15 +49,15 @@ const HeroSection = () => {
             </motion.p>
 
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-5"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <a href="#showroom" className="btn-primary text-center">
+              <a href="#about" className="btn-primary">
                 {t.hero.cta1}
               </a>
-              <a href="#contact" className="btn-secondary text-center">
+              <a href="#contact" className="btn-secondary">
                 {t.hero.cta2}
               </a>
             </motion.div>
@@ -66,19 +66,26 @@ const HeroSection = () => {
         </div>
       </div>
       
+      {/* Subtle Background Glow */}
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-1/2 h-full bg-brand-accent-soft/10 blur-[120px] rounded-full z-0 pointer-events-none" />
+
       {/* Scroll Indicator */}
       <motion.div 
-        className="absolute bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center z-20"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center z-20"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
       >
-        <div className="text-[10px] uppercase tracking-[0.3em] mb-3 font-light text-gray-400">{t.hero.scrollHint}</div>
+        <div className="text-[11px] uppercase tracking-[0.2em] mb-3 font-semibold text-brand-muted">{t.hero.scrollHint}</div>
         <motion.div 
-          className="w-[1px] h-10 bg-gradient-to-b from-brand-honey/60 to-transparent"
-          animate={{ height: [0, 40, 0], y: [0, 20, 40] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-        />
+          className="w-[2px] h-8 bg-brand-accent/30 rounded-full overflow-hidden"
+        >
+          <motion.div 
+            className="w-full bg-brand-accent"
+            animate={{ height: ['0%', '100%', '0%'], y: ['0%', '0%', '100%'] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </motion.div>
       </motion.div>
     </section>
   );

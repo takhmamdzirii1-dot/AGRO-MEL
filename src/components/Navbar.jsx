@@ -45,15 +45,16 @@ const Navbar = () => {
     <nav
       id="navbar"
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'glass-navbar py-3' : 'bg-transparent py-5'
+        isScrolled ? 'warm-navbar py-3 shadow-sm' : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="#" className="text-2xl font-serif font-bold text-white tracking-wider">
-              AGRO <span className="text-gradient-gold">MEL</span>
+            <a href="#" className="text-2xl font-sans font-bold text-brand-text tracking-tight flex items-center gap-2">
+              <span className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center text-brand-surface text-lg">A</span>
+              AGRO <span className="text-brand-primary">MEL</span>
             </a>
           </div>
 
@@ -63,10 +64,10 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-300 hover:text-white transition-colors duration-200 text-[0.8125rem] uppercase tracking-widest font-medium relative group"
+                className="text-brand-muted hover:text-brand-primary transition-colors duration-200 text-sm font-medium relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-honey transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-accent transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
 
@@ -74,11 +75,11 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={(e) => { e.stopPropagation(); setIsLangOpen(!isLangOpen); }}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full glass-card text-sm text-gray-300 hover:text-white transition-all duration-300 cursor-pointer"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-border text-sm text-brand-muted hover:text-brand-text hover:border-brand-accent transition-all duration-300 cursor-pointer"
                 id="lang-switcher"
               >
                 <Globe size={14} />
-                <span className="font-medium tracking-wider">{languages.find(l => l.code === language)?.label}</span>
+                <span className="font-medium">{languages.find(l => l.code === language)?.label}</span>
               </button>
               
               <AnimatePresence>
@@ -88,7 +89,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -8, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full mt-2 end-0 w-40 glass-card rounded-xl overflow-hidden py-1"
+                    className="absolute top-full mt-2 end-0 w-40 bg-white border border-brand-border shadow-xl rounded-2xl overflow-hidden py-1"
                   >
                     {languages.map((lang) => (
                       <button
@@ -96,8 +97,8 @@ const Navbar = () => {
                         onClick={() => { switchLanguage(lang.code); setIsLangOpen(false); }}
                         className={`w-full px-4 py-2.5 text-start text-sm transition-all duration-200 flex items-center justify-between cursor-pointer ${
                           language === lang.code
-                            ? 'text-brand-honey bg-white/5'
-                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                            ? 'text-brand-primary bg-brand-bg/50'
+                            : 'text-brand-muted hover:text-brand-text hover:bg-brand-bg/30'
                         }`}
                       >
                         <span>{lang.full}</span>
@@ -111,7 +112,7 @@ const Navbar = () => {
 
             <a
               href="#contact"
-              className="btn-primary text-xs py-2.5 px-5"
+              className="btn-primary py-2 px-6 text-sm"
             >
               {t.nav.contactBtn}
             </a>
@@ -123,7 +124,7 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={(e) => { e.stopPropagation(); setIsLangOpen(!isLangOpen); }}
-                className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full glass-card text-xs text-gray-300 hover:text-white transition-all cursor-pointer"
+                className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-brand-border text-xs text-brand-muted cursor-pointer"
               >
                 <Globe size={12} />
                 <span className="font-medium">{languages.find(l => l.code === language)?.label}</span>
@@ -135,7 +136,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -8, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full mt-2 end-0 w-36 glass-card rounded-xl overflow-hidden py-1 z-50"
+                    className="absolute top-full mt-2 end-0 w-36 bg-white border border-brand-border shadow-xl rounded-2xl overflow-hidden py-1 z-50"
                   >
                     {languages.map((lang) => (
                       <button
@@ -143,8 +144,8 @@ const Navbar = () => {
                         onClick={() => { switchLanguage(lang.code); setIsLangOpen(false); }}
                         className={`w-full px-3 py-2 text-start text-sm transition-all duration-200 cursor-pointer ${
                           language === lang.code
-                            ? 'text-brand-honey bg-white/5'
-                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                            ? 'text-brand-primary bg-brand-bg/50'
+                            : 'text-brand-muted hover:text-brand-text hover:bg-brand-bg/30'
                         }`}
                       >
                         {lang.full}
@@ -157,7 +158,7 @@ const Navbar = () => {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-300 hover:text-white focus:outline-none"
+              className="text-brand-text hover:text-brand-primary focus:outline-none"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -173,14 +174,14 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden glass-navbar absolute top-full left-0 w-full border-t border-white/5 overflow-hidden"
+            className="lg:hidden bg-white absolute top-full left-0 w-full border-t border-brand-border overflow-hidden shadow-2xl"
           >
             <div className="px-4 pt-3 pb-6 space-y-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="block px-4 py-3 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200"
+                  className="block px-4 py-3 text-base font-medium text-brand-muted hover:text-brand-primary hover:bg-brand-bg/50 rounded-2xl transition-all duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -189,7 +190,7 @@ const Navbar = () => {
               <div className="pt-3">
                 <a
                   href="#contact"
-                  className="block text-center btn-primary w-full py-3"
+                  className="block text-center btn-primary w-full py-4 rounded-2xl"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {t.nav.contactBtn}

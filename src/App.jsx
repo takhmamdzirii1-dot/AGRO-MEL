@@ -1,6 +1,6 @@
 import React from 'react';
 import { LanguageProvider } from './context/LanguageContext';
-import ImageSequence from './components/ImageSequence';
+import ProductScrollVideo from './components/ProductScrollVideo';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
@@ -15,8 +15,8 @@ function App() {
   return (
     <LanguageProvider>
       <div className="min-h-screen text-brand-cream font-sans selection:bg-brand-honey/30 selection:text-white">
-        {/* Fixed fullscreen 3D background animation */}
-        <ImageSequence />
+        {/* Fixed fullscreen scroll-scrubbed video background */}
+        <ProductScrollVideo />
         
         {/* All content sits on top of the 3D animation */}
         <div className="relative z-10">
