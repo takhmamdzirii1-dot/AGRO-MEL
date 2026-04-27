@@ -93,16 +93,9 @@ const FeaturedProducts = () => {
                   className={`soft-card flex flex-col group overflow-hidden border-brand-border/60`}
                 >
                   {/* Product Visual Container */}
-                  <div className={`h-48 w-full rounded-2xl ${color.bg} flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-[1.02]`}>
-                    <div className="relative">
-                       <div className="w-24 h-32 bg-white rounded-lg shadow-sm border border-brand-border/40 flex flex-col items-center justify-center p-3">
-                          <div className="w-full h-1 bg-brand-primary/10 rounded-full mb-2" />
-                          <div className="w-2/3 h-1 bg-brand-primary/5 rounded-full mb-4" />
-                          <div className="text-[8px] font-bold text-brand-primary/30 uppercase tracking-widest text-center">AGRO MEL<br/>FACTORY</div>
-                       </div>
-                       {/* Subtle highlight */}
-                       <div className="absolute -top-4 -right-4 w-12 h-12 bg-brand-accent-soft/30 blur-xl rounded-full" />
-                    </div>
+                  <div className={`h-48 w-full rounded-2xl ${color.bg} overflow-hidden mb-8 transition-transform duration-500 group-hover:scale-[1.02] relative`}>
+                    <img src="/assets/products.png" alt={product.name} className="w-full h-full object-cover opacity-90" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-surface/20 to-transparent mix-blend-multiply pointer-events-none" />
                   </div>
 
                   {/* Product Info */}

@@ -52,9 +52,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="#" className="text-2xl font-sans font-bold text-brand-text tracking-tight flex items-center gap-2">
-              <span className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center text-brand-surface text-lg">A</span>
-              AGRO <span className="text-brand-primary">MEL</span>
+            <a href="#" className="block">
+              <img src="/assets/logo.png" alt="AGRO MEL Logo" className="h-16 w-auto" />
             </a>
           </div>
 

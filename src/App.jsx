@@ -19,11 +19,11 @@ function App() {
           <Navbar />
           
           <main>
+            <ProductAnimation />
             <HeroSection />
             <AboutSection />
             <FeaturesSection />
             <FeaturedProducts />
-            <ProductAnimation />
             <ProductionProcess />
             <FactoryQuality />
             <ContactCTA />

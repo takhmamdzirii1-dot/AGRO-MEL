@@ -7,8 +7,16 @@ const HeroSection = () => {
   return (
     <section 
       id="home"
-      className="relative min-h-screen flex items-center bg-brand-bg pt-20"
+      className="relative min-h-screen flex items-center bg-brand-bg pt-20 overflow-hidden"
     >
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/assets/hero-bg.png" 
+          alt="Morning Wheat" 
+          className="w-full h-full object-cover object-right opacity-90 mix-blend-multiply" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/80 to-transparent"></div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20">
         <div className="max-w-3xl">
           
