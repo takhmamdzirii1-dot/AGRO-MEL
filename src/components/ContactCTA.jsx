@@ -50,37 +50,37 @@ const ContactCTA = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3 bg-white border border-brand-border/60 rounded-[32px] p-8 md:p-12 shadow-xl"
+            className="lg:col-span-3 glass-panel p-8 md:p-12"
           >
             <form className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-brand-text px-1">{t.contact.form.name}</label>
+                  <label className="text-sm font-bold text-brand-text px-1 mb-2 block">{t.contact.form.name}</label>
                   <input
                     type="text"
-                    className="w-full bg-brand-surface border border-brand-border/40 rounded-2xl px-6 py-4 text-brand-text text-sm focus:outline-none focus:border-brand-primary transition-all shadow-sm"
+                    className="w-full bg-white/60 border border-brand-white-border rounded-full px-6 py-4 text-brand-text text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-brand-text px-1">{t.contact.form.email}</label>
+                  <label className="text-sm font-bold text-brand-text px-1 mb-2 block">{t.contact.form.email}</label>
                   <input
                     type="email"
-                    className="w-full bg-brand-surface border border-brand-border/40 rounded-2xl px-6 py-4 text-brand-text text-sm focus:outline-none focus:border-brand-primary transition-all shadow-sm"
+                    className="w-full bg-white/60 border border-brand-white-border rounded-full px-6 py-4 text-brand-text text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]"
                   />
                 </div>
               </div>
               <div className="space-y-2">
-                 <label className="text-sm font-bold text-brand-text px-1">{t.contact.form.company}</label>
+                 <label className="text-sm font-bold text-brand-text px-1 mb-2 block">{t.contact.form.company}</label>
                  <input
                   type="text"
-                  className="w-full bg-brand-surface border border-brand-border/40 rounded-2xl px-6 py-4 text-brand-text text-sm focus:outline-none focus:border-brand-primary transition-all shadow-sm"
+                  className="w-full bg-white/60 border border-brand-white-border rounded-full px-6 py-4 text-brand-text text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]"
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-brand-text px-1">{t.contact.form.message}</label>
+                <label className="text-sm font-bold text-brand-text px-1 mb-2 block">{t.contact.form.message}</label>
                 <textarea
                   rows={5}
-                  className="w-full bg-brand-surface border border-brand-border/40 rounded-2xl px-6 py-4 text-brand-text text-sm focus:outline-none focus:border-brand-primary transition-all shadow-sm resize-none"
+                  className="w-full bg-white/60 border border-brand-white-border rounded-3xl px-6 py-4 text-brand-text text-sm focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] resize-none"
                 />
               </div>
               <div className="pt-4">
@@ -101,7 +101,7 @@ const ContactCTA = () => {
             className="lg:col-span-2 space-y-6"
           >
             {/* Phone */}
-            <div className="soft-card group hover:bg-white transition-all duration-300">
+            <div className="glass-panel p-6 group hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
               <div className="flex items-center gap-6">
                 <div className="w-14 h-14 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary flex-shrink-0 group-hover:scale-110 transition-transform">
                   <Phone size={24} />
@@ -114,7 +114,7 @@ const ContactCTA = () => {
             </div>
 
             {/* Email */}
-            <div className="soft-card group hover:bg-white transition-all duration-300">
+            <div className="glass-panel p-6 group hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
               <div className="flex items-center gap-6">
                 <div className="w-14 h-14 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent flex-shrink-0 group-hover:scale-110 transition-transform">
                   <Mail size={24} />
@@ -127,7 +127,7 @@ const ContactCTA = () => {
             </div>
 
             {/* Address */}
-            <div className="soft-card group hover:bg-white transition-all duration-300">
+            <div className="glass-panel p-6 group hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
               <div className="flex items-center gap-6">
                 <div className="w-14 h-14 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary flex-shrink-0 group-hover:scale-110 transition-transform">
                   <MapPin size={24} />
@@ -140,7 +140,7 @@ const ContactCTA = () => {
             </div>
 
             {/* Map placeholder */}
-            <div className="soft-card p-0 overflow-hidden h-44 relative bg-brand-surface border-brand-border/40">
+            <div className="glass-panel p-0 overflow-hidden h-44 relative">
               <div className="absolute inset-0 bg-brand-accent/5 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md mx-auto mb-3">

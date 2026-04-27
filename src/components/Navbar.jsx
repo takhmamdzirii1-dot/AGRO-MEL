@@ -44,16 +44,16 @@ const Navbar = () => {
   return (
     <nav
       id="navbar"
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'warm-navbar py-3 shadow-sm' : 'bg-transparent py-5'
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 pt-4 px-4 sm:px-6 lg:px-8`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={`mx-auto max-w-6xl transition-all duration-500 ${
+        isScrolled ? 'glass-pill py-2 px-6' : 'bg-transparent py-4 px-2'
+      }`}>
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <a href="#" className="block">
-              <img src="/assets/logo.png" alt="AGRO MEL Logo" className="h-16 w-auto" />
+              <img src="/assets/logo.png" alt="AGRO MEL Logo" className="h-14 w-auto mix-blend-multiply" />
             </a>
           </div>
 

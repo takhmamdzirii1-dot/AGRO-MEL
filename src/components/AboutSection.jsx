@@ -28,9 +28,9 @@ const AboutSection = () => {
               <div className="relative">
                 <div className="w-64 h-64 bg-brand-accent-soft/20 rounded-full blur-3xl" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="text-center p-10 bg-white/40 backdrop-blur-xl rounded-[32px] border border-white/60 shadow-inner">
-                      <span className="text-6xl mb-4 block">☀️</span>
-                      <h4 className="text-brand-text font-bold text-xl uppercase tracking-widest">{t.about.est}</h4>
+                   <div className="text-center p-12 glass-panel-strong shadow-[0_30px_60px_rgba(43,33,24,0.12)]">
+                      <span className="text-6xl mb-4 block drop-shadow-md">☀️</span>
+                      <h4 className="text-brand-text font-bold text-2xl uppercase tracking-widest drop-shadow-sm">{t.about.est}</h4>
                    </div>
                 </div>
               </div>

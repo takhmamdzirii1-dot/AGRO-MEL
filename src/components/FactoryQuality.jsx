@@ -56,13 +56,13 @@ const FactoryQuality = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 + idx * 0.1 }}
-                className="soft-card group hover:bg-white transition-all duration-300"
+                className="glass-panel p-8 group hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(43,33,24,0.12)] transition-all duration-500"
               >
-                <div className="mb-6 w-14 h-14 rounded-2xl bg-brand-bg border border-brand-border flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="mb-6 w-14 h-14 rounded-full glass-panel flex items-center justify-center border border-brand-white-border group-hover:scale-110 transition-transform shadow-sm">
                   {icons[idx]}
                 </div>
-                <h3 className="text-brand-text font-sans font-bold text-lg mb-3">{std.title}</h3>
-                <p className="text-brand-muted text-sm leading-relaxed">{std.desc}</p>
+                <h3 className="text-brand-text font-sans font-bold text-xl mb-3 group-hover:text-brand-primary transition-colors">{std.title}</h3>
+                <p className="text-brand-muted text-sm leading-relaxed font-medium">{std.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -76,13 +76,13 @@ const FactoryQuality = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 + idx * 0.1 }}
-              className="soft-card group hover:bg-white transition-all duration-300"
+              className="glass-panel p-8 group hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(43,33,24,0.12)] transition-all duration-500"
             >
-              <div className="mb-6 w-14 h-14 rounded-2xl bg-brand-bg border border-brand-border flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="mb-6 w-14 h-14 rounded-full glass-panel flex items-center justify-center border border-brand-white-border group-hover:scale-110 transition-transform shadow-sm">
                 {icons[idx + 2]}
               </div>
-              <h3 className="text-brand-text font-sans font-bold text-lg mb-3">{std.title}</h3>
-              <p className="text-brand-muted text-sm leading-relaxed">{std.desc}</p>
+              <h3 className="text-brand-text font-sans font-bold text-xl mb-3 group-hover:text-brand-primary transition-colors">{std.title}</h3>
+              <p className="text-brand-muted text-sm leading-relaxed font-medium">{std.desc}</p>
             </motion.div>
           ))}
         </div>

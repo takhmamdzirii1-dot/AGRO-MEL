@@ -30,15 +30,15 @@ const HeroSection = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mb-8"
+              className="mb-8 inline-block"
             >
-              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-brand-accent/10 border border-brand-accent/20 text-brand-accent text-xs font-bold uppercase tracking-[0.1em]">
+              <span className="glass-panel inline-flex items-center px-5 py-2 text-brand-primary text-xs font-bold uppercase tracking-widest">
                 ✦ &nbsp; {t.hero.badge}
               </span>
             </motion.div>
 
             <motion.h1 
-              className="text-5xl sm:text-6xl md:text-7xl font-sans font-bold text-brand-text leading-[1.1] mb-8"
+              className="text-[2.75rem] sm:text-6xl md:text-[5rem] font-sans font-bold text-brand-text leading-[1.05] tracking-tight mb-8 drop-shadow-sm"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.4 }}

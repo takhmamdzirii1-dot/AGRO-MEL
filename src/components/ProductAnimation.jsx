@@ -132,7 +132,7 @@ const ProductAnimation = () => {
             
             <motion.div 
               style={{ opacity: opacity1, y: y1 }}
-              className="absolute top-[25%] right-[10%] md:right-[20%] soft-card max-w-sm pointer-events-auto"
+              className="absolute top-[25%] right-[10%] md:right-[20%] glass-panel-strong p-8 max-w-sm pointer-events-auto"
             >
               <h3 className="text-xl font-bold text-brand-primary mb-2">Carefully Selected Ingredients</h3>
               <p className="text-brand-text">Every product begins with nature. We meticulously source our grains, honeys, and raw materials to guarantee purity from the very first step.</p>
@@ -140,7 +140,7 @@ const ProductAnimation = () => {
 
             <motion.div 
               style={{ opacity: opacity2, y: y2 }}
-              className="absolute top-[50%] left-[10%] md:left-[15%] soft-card max-w-sm pointer-events-auto"
+              className="absolute top-[50%] left-[10%] md:left-[15%] glass-panel-strong p-8 max-w-sm pointer-events-auto"
             >
               <h3 className="text-xl font-bold text-brand-accent mb-2">Modern Clean Processing</h3>
               <p className="text-brand-text">Our facility utilizes state-of-the-art hygiene protocols. Your family's safety is baked into our manufacturing standards.</p>
@@ -148,7 +148,7 @@ const ProductAnimation = () => {
 
             <motion.div 
               style={{ opacity: opacity3, y: y3 }}
-              className="absolute top-[75%] right-[10%] md:right-[20%] soft-card max-w-sm pointer-events-auto"
+              className="absolute top-[75%] right-[10%] md:right-[20%] glass-panel-strong p-8 max-w-sm pointer-events-auto"
             >
               <h3 className="text-xl font-bold text-brand-primary mb-2">Crafted for Your Home</h3>
               <p className="text-brand-text">Warm, nourishing, and made for the morning table. Experience the trusted quality of AGRO MEL in every bite.</p>

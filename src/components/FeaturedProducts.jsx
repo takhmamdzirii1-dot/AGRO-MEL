@@ -90,7 +90,7 @@ const FeaturedProducts = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.05 }}
-                  className={`soft-card flex flex-col group overflow-hidden border-brand-border/60`}
+                  className="glass-panel p-6 flex flex-col group overflow-hidden hover:shadow-[0_30px_60px_rgba(43,33,24,0.12)] hover:-translate-y-2 transition-all duration-500"
                 >
                   {/* Product Visual Container */}
                   <div className={`h-48 w-full rounded-2xl ${color.bg} overflow-hidden mb-8 transition-transform duration-500 group-hover:scale-[1.02] relative`}>
@@ -101,10 +101,10 @@ const FeaturedProducts = () => {
                   {/* Product Info */}
                   <div className="flex-1 flex flex-col">
                     <div className="text-[10px] text-brand-accent font-bold uppercase tracking-widest mb-2">{product.category}</div>
-                    <h3 className="text-xl font-sans font-bold text-brand-text mb-3">
+                    <h3 className="text-2xl font-sans font-bold text-brand-text mb-3 tracking-tight group-hover:text-brand-primary transition-colors">
                       {product.name}
                     </h3>
-                    <p className="text-brand-muted text-sm leading-relaxed mb-8 flex-1">
+                    <p className="text-brand-muted text-base leading-relaxed mb-8 flex-1 font-medium">
                       {product.desc}
                     </p>
                     

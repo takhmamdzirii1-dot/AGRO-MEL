@@ -60,12 +60,12 @@ const FeaturesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="soft-card soft-card-hover group cursor-default"
+              className="glass-panel p-8 group cursor-default hover:shadow-[0_30px_60px_rgba(43,33,24,0.12)] hover:-translate-y-2 transition-all duration-500"
             >
-              <div className={`mb-8 w-16 h-16 rounded-2xl bg-brand-bg flex items-center justify-center ${iconColors[idx]} border border-brand-border transition-all duration-300 group-hover:scale-110`}>
+              <div className={`mb-8 w-16 h-16 rounded-full glass-panel flex items-center justify-center ${iconColors[idx]} border border-brand-white-border shadow-sm transition-all duration-300 group-hover:scale-110`}>
                 {icons[idx]}
               </div>
-              <h3 className="text-xl font-sans font-bold text-brand-text mb-4">
+              <h3 className="text-xl font-sans font-bold text-brand-text mb-4 group-hover:text-brand-primary transition-colors">
                 {item.title}
               </h3>
               <p className="text-brand-muted text-base leading-relaxed">
