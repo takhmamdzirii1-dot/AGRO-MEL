@@ -5,7 +5,7 @@ const AboutSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-24 md:py-32 bg-brand-surface/80 relative overflow-hidden">
+    <section id="about" className="py-24 md:py-32 bg-brand-surface relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-primary/5 blur-[120px] pointer-events-none transform translate-x-1/3" />
       <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-brand-accent/5 blur-[100px] pointer-events-none" />

@@ -14,7 +14,7 @@ const FactoryQuality = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="quality" className="py-24 md:py-32 bg-brand-surface/80 relative overflow-hidden">
+    <section id="quality" className="py-24 md:py-32 bg-brand-surface relative overflow-hidden">
       <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-brand-primary/5 to-transparent pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

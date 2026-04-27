@@ -24,7 +24,7 @@ const FeaturesSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="features" className="py-24 md:py-32 bg-brand-bg/80 relative overflow-hidden">
+    <section id="features" className="py-24 md:py-32 bg-brand-bg relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2" />
       <div className="absolute bottom-0 right-0 w-60 h-60 bg-brand-accent/5 rounded-full blur-[100px] pointer-events-none translate-x-1/3" />

@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <section 
       id="home"
-      className="relative min-h-screen flex items-center bg-brand-bg/80 pt-20"
+      className="relative min-h-screen flex items-center bg-brand-bg pt-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20">
         <div className="max-w-3xl">

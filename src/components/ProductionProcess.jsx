@@ -22,7 +22,7 @@ const ProductionProcess = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="process" className="py-24 md:py-32 bg-brand-bg/80 relative overflow-hidden">
+    <section id="process" className="py-24 md:py-32 bg-brand-bg relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-brand-accent/5 rounded-full blur-[120px] pointer-events-none" />
