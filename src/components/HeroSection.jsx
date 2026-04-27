@@ -9,16 +9,6 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center"
     >
-      {/* Dark overlay so text is readable over the 3D background */}
-      <div className="absolute inset-0 bg-brand-black/50 pointer-events-none" />
-      
-      {/* Ambient glow effects */}
-      <div className="absolute top-1/4 left-1/6 w-[500px] h-[500px] bg-brand-green/20 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/6 w-[400px] h-[400px] bg-brand-honey/8 rounded-full blur-[150px] pointer-events-none" />
-      
-      {/* Bottom fade into next section */}
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-brand-black/90 to-transparent pointer-events-none z-10" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 py-32">
         <div className="max-w-3xl">
           

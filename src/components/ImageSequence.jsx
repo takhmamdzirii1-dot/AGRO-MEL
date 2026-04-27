@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
+import { useScroll, useTransform, useMotionValueEvent, useSpring } from 'framer-motion';
 
 const ImageSequence = ({ 
   frameCount = 240, 
@@ -12,9 +12,16 @@ const ImageSequence = ({
 
   // Use entire document scroll for the animation
   const { scrollYProgress } = useScroll();
+  
+  // Add a spring for smoother transitions
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
-  // Map scroll progress (0 to 1) to frame index (1 to frameCount)
-  const frameIndex = useTransform(scrollYProgress, [0, 1], [1, frameCount]);
+  // Map smooth scroll progress (0 to 1) to frame index (1 to frameCount)
+  const frameIndex = useTransform(smoothProgress, [0, 1], [1, frameCount]);
 
   // Preload images
   useEffect(() => {
