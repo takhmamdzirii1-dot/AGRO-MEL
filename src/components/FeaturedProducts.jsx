@@ -103,8 +103,8 @@ const FeaturedProducts = () => {
                 >
                   {/* Product Visual Container */}
                   <div className={`h-48 w-full rounded-2xl ${color.bg} overflow-hidden mb-8 transition-transform duration-500 group-hover:scale-[1.02] relative`}>
-                    <img src={productImages[originalIdx]} alt={product.name} className="w-full h-full object-cover opacity-90" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-surface/20 to-transparent mix-blend-multiply pointer-events-none" />
+                    <img src={productImages[originalIdx]} alt={product.name} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-surface/30 to-transparent pointer-events-none" />
                   </div>
 
                   {/* Product Info */}
