@@ -20,24 +20,20 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
             className="relative h-[450px] lg:h-[550px] rounded-[40px] overflow-hidden shadow-2xl"
           >
-            {/* Factory Image Placeholder - Warm and Clean */}
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 via-brand-surface to-brand-accent/10 z-10" />
-            
+            {/* Base Image */}
             <img 
               src="/assets/factory.jpg" 
               alt="AGRO MEL Factory" 
-              className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-overlay"
+              className="absolute inset-0 w-full h-full object-cover"
             />
             
-            {/* Visual representation of a clean factory/morning vibe */}
+            {/* Subtle Gradient to make text pop */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10" />
+            
+            {/* Center Badge */}
             <div className="absolute inset-0 flex items-center justify-center z-20">
-              <div className="relative">
-                <div className="w-64 h-64 bg-brand-accent-soft/20 rounded-full blur-3xl" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="text-center p-12 glass-panel-strong shadow-[0_30px_60px_rgba(43,33,24,0.12)]">
-                      <h4 className="text-brand-text font-bold text-2xl uppercase tracking-widest drop-shadow-sm">{t.about.est}</h4>
-                   </div>
-                </div>
+              <div className="text-center px-10 py-5 glass-panel-strong shadow-[0_30px_60px_rgba(0,0,0,0.15)] bg-white/30">
+                 <h4 className="text-brand-text font-bold text-2xl uppercase tracking-widest drop-shadow-sm">{t.about.est}</h4>
               </div>
             </div>
           </motion.div>
