@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const ProductAnimation = () => {
@@ -100,8 +101,8 @@ const ProductAnimation = () => {
   }, [imagesLoaded, scrollYProgress]);
 
   // Use framer-motion to create some text animations synced with scroll
-  const opacity1 = useTransform(scrollYProgress, [0.05, 0.15, 0.25], [0, 1, 0]);
-  const y1 = useTransform(scrollYProgress, [0.05, 0.15, 0.25], [50, 0, -50]);
+  const opacity1 = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  const y1 = useTransform(scrollYProgress, [0, 0.1], [0, -50]);
   
   const opacity2 = useTransform(scrollYProgress, [0.4, 0.5, 0.6], [0, 1, 0]);
   const y2 = useTransform(scrollYProgress, [0.4, 0.5, 0.6], [50, 0, -50]);
@@ -132,10 +133,17 @@ const ProductAnimation = () => {
             
             <motion.div 
               style={{ opacity: opacity1, y: y1 }}
-              className="absolute top-[25%] right-[10%] md:right-[20%] glass-panel-strong p-8 max-w-sm pointer-events-auto"
+              className="absolute bottom-[10%] left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none"
             >
-              <h3 className="text-xl font-bold text-brand-primary mb-2">Carefully Selected Ingredients</h3>
-              <p className="text-brand-text">Every product begins with nature. We meticulously source our grains, honeys, and raw materials to guarantee purity from the very first step.</p>
+              <div className="glass-panel px-6 py-4 rounded-full flex flex-col items-center shadow-[0_10px_40px_rgba(0,0,0,0.15)] bg-white/80 backdrop-blur-md border border-white/50">
+                <span className="text-brand-text font-bold text-xs tracking-[0.2em] uppercase mb-2">Glissez vers le bas</span>
+                <motion.div
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <ChevronDown className="w-6 h-6 text-brand-primary" />
+                </motion.div>
+              </div>
             </motion.div>
 
             <motion.div 
