@@ -11,7 +11,7 @@ const HeroSection = () => {
     >
       <div className="absolute inset-0 z-0">
         <img 
-          src="/assets/hero-bg.png" 
+          src="/assets/hero-bg-new.jpg" 
           alt="Morning Wheat" 
           className="w-full h-full object-cover object-right opacity-90 mix-blend-multiply" 
         />

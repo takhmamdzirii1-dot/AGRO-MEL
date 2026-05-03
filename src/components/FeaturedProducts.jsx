@@ -11,6 +11,15 @@ const accentColors = [
   { bg: 'bg-brand-accent-soft/10', border: 'border-brand-accent-soft/20' },
 ];
 
+const productImages = [
+  '/assets/breakfast-cereals.jpg',
+  '/assets/products.png',
+  '/assets/products.png',
+  '/assets/products.png',
+  '/assets/dairy-additions.jpg',
+  '/assets/healthy-snacks.jpg',
+];
+
 const FeaturedProducts = () => {
   const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState(0);
@@ -94,7 +103,7 @@ const FeaturedProducts = () => {
                 >
                   {/* Product Visual Container */}
                   <div className={`h-48 w-full rounded-2xl ${color.bg} overflow-hidden mb-8 transition-transform duration-500 group-hover:scale-[1.02] relative`}>
-                    <img src="/assets/products.png" alt={product.name} className="w-full h-full object-cover opacity-90" />
+                    <img src={productImages[originalIdx]} alt={product.name} className="w-full h-full object-cover opacity-90" />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-surface/20 to-transparent mix-blend-multiply pointer-events-none" />
                   </div>
 
