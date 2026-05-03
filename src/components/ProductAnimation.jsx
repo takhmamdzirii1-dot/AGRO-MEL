@@ -7,39 +7,31 @@ const ProductAnimation = () => {
   const { t } = useLanguage();
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [posterLoaded, setPosterLoaded] = useState(false);
   
   const frameCount = 120;
   const imagesRef = useRef([]);
 
-  // Preload images
+  // Load first frame immediately, then background load the rest
   useEffect(() => {
-    let loadedCount = 0;
-    const images = [];
-
-    for (let i = 1; i <= frameCount; i++) {
-      const img = new Image();
-      const frameIndex = i.toString().padStart(4, '0');
-      img.src = `/assets/frames/frame_${frameIndex}.jpg`;
-      img.onload = () => {
-        loadedCount++;
-        setLoadingProgress(Math.round((loadedCount / frameCount) * 100));
-        if (loadedCount === frameCount) {
-          imagesRef.current = images;
-          setImagesLoaded(true);
-        }
-      };
-      // In case of error, just act as if it loaded so it doesn't block forever
-      img.onerror = () => {
-        loadedCount++;
-        if (loadedCount === frameCount) {
-          imagesRef.current = images;
-          setImagesLoaded(true);
-        }
-      };
-      images.push(img);
-    }
+    const images = new Array(frameCount);
+    
+    // Load frame 1
+    const firstImg = new Image();
+    firstImg.src = `/assets/frames/frame_0001.jpg`;
+    firstImg.onload = () => {
+      images[0] = firstImg;
+      imagesRef.current = images;
+      setPosterLoaded(true);
+      
+      // Now lazy-load the rest in the background
+      for (let i = 2; i <= frameCount; i++) {
+        const img = new Image();
+        const frameIndex = i.toString().padStart(4, '0');
+        img.src = `/assets/frames/frame_${frameIndex}.jpg`;
+        images[i - 1] = img;
+      }
+    };
   }, []);
 
   const { scrollYProgress } = useScroll({
@@ -48,7 +40,7 @@ const ProductAnimation = () => {
   });
 
   useEffect(() => {
-    if (!imagesLoaded || !canvasRef.current || !imagesRef.current[0]) return;
+    if (!posterLoaded || !canvasRef.current || !imagesRef.current[0]) return;
 
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
@@ -74,8 +66,20 @@ const ProductAnimation = () => {
         Math.floor(progress * frameCount)
       );
       
-      const img = imagesRef.current[frameIndex];
-      if (!img || !img.complete || img.naturalWidth === 0) return;
+      let img = imagesRef.current[frameIndex];
+      
+      // If the target frame isn't loaded, search backwards for the nearest loaded frame
+      if (!img || !img.complete || img.naturalWidth === 0) {
+        let found = false;
+        for (let i = frameIndex - 1; i >= 0; i--) {
+          if (imagesRef.current[i] && imagesRef.current[i].complete && imagesRef.current[i].naturalWidth > 0) {
+            img = imagesRef.current[i];
+            found = true;
+            break;
+          }
+        }
+        if (!found) return; // shouldn't happen since frame 0 is always loaded
+      }
 
       context.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -98,7 +102,7 @@ const ProductAnimation = () => {
       window.removeEventListener('resize', setCanvasSize);
       if (typeof unsub === 'function') unsub();
     };
-  }, [imagesLoaded, scrollYProgress]);
+  }, [posterLoaded, scrollYProgress]);
 
   // Use framer-motion to create some text animations synced with scroll
   const opacity1 = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
@@ -114,13 +118,7 @@ const ProductAnimation = () => {
     <section ref={containerRef} className="relative h-[400vh] bg-brand-surface w-full">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
         
-        {/* Loading State */}
-        {!imagesLoaded && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-brand-surface z-20">
-            <div className="w-16 h-16 border-4 border-brand-border border-t-brand-primary rounded-full animate-spin mb-4"></div>
-            <p className="text-brand-brown font-medium">Loading Experience {loadingProgress}%</p>
-          </div>
-        )}
+
 
         <canvas 
           ref={canvasRef} 
