@@ -139,16 +139,19 @@ const ContactCTA = () => {
               </div>
             </div>
 
-            {/* Map placeholder */}
-            <div className="glass-panel p-0 overflow-hidden h-44 relative">
-              <div className="absolute inset-0 bg-brand-accent/5 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md mx-auto mb-3">
-                    <MapPin size={24} className="text-brand-accent" />
-                  </div>
-                  <p className="text-brand-muted text-[10px] uppercase font-bold tracking-[0.2em]">Map Visual</p>
-                </div>
-              </div>
+            {/* Google Map */}
+            <div className="glass-panel p-0 overflow-hidden h-64 relative group">
+              <iframe
+                src="https://maps.google.com/maps?q=Seddouk,%20Bejaia,%20Algeria&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 w-full h-full grayscale-[0.2] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                title="Agro Mel Location"
+              ></iframe>
             </div>
           </motion.div>
         </div>
